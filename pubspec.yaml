@@ -1,0 +1,38 @@
+name: gakunen
+description: A new Flutter project.
+publish_to: 'none' 
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^1.0.0
+
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - images/
+  fonts:
+    - family: Products
+      fonts:
+        - asset: images/Product Sans Regular.ttf
+        - asset: images/Product Sans Bold.ttf
+          style: italic
+    - family: Cool
+      fonts:
+        - asset: images/coolvetica rg.otf
+    - family: Pop
+      fonts:
+        - asset: images/Poppins-Regular.ttf
+    - family: Lucky
+      fonts:
+        - asset: images/LuckiestGuy.ttf
