@@ -29,7 +29,7 @@ flutter:
           style: italic
     - family: Cool
       fonts:
-        - asset: images/coolvetica rg.otf
+        - asset: images/coolvetica-rg.otf
     - family: Pop
       fonts:
         - asset: images/Poppins-Regular.ttf

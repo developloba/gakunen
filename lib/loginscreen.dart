@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gakunen/dashboard.dart';
-import 'dart:math';
 import 'createuser.dart';
 import 'dashboard.dart';
 
@@ -12,20 +11,6 @@ class Tway extends StatefulWidget {
 }
 
 class _TwayState extends State<Tway> {
-  void replygen() {
-    setState(() {
-      var intValue = Random().nextInt(4);
-      reply = replies[intValue];
-    });
-  }
-
-  String reply = '';
-  List<String> replies = [
-    'Hey',
-    'how are you',
-    ' how was your day',
-    'are you fine?'
-  ];
   @override
   Widget build(BuildContext context) {
     return Stack(

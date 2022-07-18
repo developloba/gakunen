@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gakunen/main.dart';
 
 class Newuser extends StatefulWidget {
   const Newuser({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _NewuserState extends State<Newuser> {
                                 child: RichText(
                                     text: const TextSpan(
                                         style: TextStyle(
-                                            fontFamily: 'Coolvetica',
+                                            fontFamily: 'Products',
                                             fontSize: 60,
                                             color: Colors.black),
                                         children: <TextSpan>[
@@ -54,30 +55,9 @@ class _NewuserState extends State<Newuser> {
                               padding: const EdgeInsets.only(left: 0),
                               child: Row(
                                 children: [
-                                  SizedBox(
-                                      width: 350,
-                                      child: TextField(
-                                        style: const TextStyle(
-                                            fontFamily: 'Products',
-                                            fontSize: 25),
-                                        decoration: InputDecoration(
-                                            focusedBorder: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(45),
-                                                borderSide: BorderSide(
-                                                    color: Colors
-                                                        .blueGrey.shade500)),
-                                            labelText: 'Firstname',
-                                            labelStyle: TextStyle(
-                                                fontFamily: 'Products',
-                                                fontSize: 20,
-                                                color:
-                                                    Colors.blueGrey.shade500),
-                                            border: OutlineInputBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                            )),
-                                      )),
+                                  const Txtfield(
+                                    mssg: 'Firstname',
+                                  ),
                                   const SizedBox(
                                     width: 50,
                                   ),

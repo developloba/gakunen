@@ -1,13 +1,29 @@
 import 'package:gakunen/analysis.dart';
 import 'package:gakunen/calculator.dart';
 import 'package:gakunen/upload.dart';
+import 'dart:math';
 
 import 'main.dart';
 
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+String name = '';
+List<String> names = [' Dolapo', ' Elile', ' Chidinma', ' Loba', ' segggs'];
+
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  void randomname() {
+    setState(() {
+      var intValue = Random().nextInt(4);
+      name = names[intValue];
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +58,7 @@ class Home extends StatelessWidget {
                               Colors.transparent),
                           elevation: MaterialStateProperty.all<double>(0)),
                       onPressed: () {
+                        randomname();
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -112,17 +129,17 @@ class Home extends StatelessWidget {
                   height: 100,
                 ),
                 RichText(
-                    text: const TextSpan(
-                        style: TextStyle(
+                    text: TextSpan(
+                        style: const TextStyle(
                             color: Colors.black,
                             fontFamily: 'Products',
                             fontSize: 80,
                             fontStyle: FontStyle.normal),
                         children: [
-                      TextSpan(text: 'Welcome'),
+                      const TextSpan(text: 'Welcome'),
                       TextSpan(
-                          text: ' Elile',
-                          style: TextStyle(color: Colors.blueGrey)),
+                          text: name,
+                          style: const TextStyle(color: Colors.blueGrey)),
                     ])),
                 const SizedBox(
                   height: 100,
@@ -147,32 +164,19 @@ class Home extends StatelessWidget {
                       child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 90.0),
                           child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Calc()));
-                            },
-                            child: Card(
-                              semanticContainer: true,
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              elevation: 15,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Stack(
-                                children: [
-                                  SizedBox(
-                                      width: 400,
-                                      height: 280,
-                                      child: Image.asset(
-                                        'images/card 2.png',
-                                        fit: BoxFit.fill,
-                                        alignment: Alignment.center,
-                                      )),
-                                ],
-                              ),
-                            ),
-                          )),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Calc()));
+                              },
+                              child: Abstract(
+                                child: Image.asset(
+                                  'images/card 2.png',
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.center,
+                                ),
+                              ))),
                     ),
                     const SizedBox(
                       width: 150,
@@ -196,11 +200,9 @@ class Home extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: 280,
-                      width: 400,
-                      child: Text(
-                        "Calculate your cgpa remotely, No stress, No hassle, We will keep your Results safe , we promise to use our target setting feature to estimate how many of those good grades you need to get your desired Cgpa!",
+                    Filler(
+                      fill: Text(
+                        'hey love',
                         style: TextStyle(
                             color: Colors.grey[700],
                             fontFamily: 'Pop',
@@ -215,32 +217,19 @@ class Home extends StatelessWidget {
                       child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 90.0),
                           child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Up()));
-                            },
-                            child: Card(
-                              semanticContainer: true,
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              elevation: 15,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Stack(
-                                children: [
-                                  SizedBox(
-                                      width: 400,
-                                      height: 280,
-                                      child: Image.asset(
-                                        'images/card 1.jpg',
-                                        fit: BoxFit.fill,
-                                        alignment: Alignment.center,
-                                      )),
-                                ],
-                              ),
-                            ),
-                          )),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Up()));
+                              },
+                              child: Abstract(
+                                child: Image.asset(
+                                  'images/card 1.jpg',
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.center,
+                                ),
+                              ))),
                     ),
                   ],
                 ),
@@ -252,41 +241,27 @@ class Home extends StatelessWidget {
                       child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 90.0),
                           child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Analysis()));
-                            },
-                            child: Card(
-                              semanticContainer: true,
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              elevation: 15,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)),
-                              child: Stack(
-                                children: [
-                                  SizedBox(
-                                      width: 400,
-                                      height: 280,
-                                      child: Image.asset(
-                                        'images/card 3.jpg',
-                                        fit: BoxFit.fill,
-                                        alignment: Alignment.center,
-                                      )),
-                                ],
-                              ),
-                            ),
-                          )),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Analysis()));
+                              },
+                              child: Abstract(
+                                child: Image.asset(
+                                  'images/card 3.jpg',
+                                  fit: BoxFit.fill,
+                                  alignment: Alignment.center,
+                                ),
+                              ))),
                     ),
                     const SizedBox(
                       width: 150,
                     ),
-                    SizedBox(
-                      height: 280,
-                      width: 400,
-                      child: Text(
-                        "Calculate your cgpa remotely, No stress, No hassle, We will keep your Results safe , we promise to use our target setting feature to estimate how many of those good grades you need to get your desired Cgpa!",
+                    Filler(
+                      fill: Text(
+                        'hey love',
                         style: TextStyle(
                             color: Colors.grey[700],
                             fontFamily: 'Pop',
