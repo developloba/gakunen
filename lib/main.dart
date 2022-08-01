@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gakunen/calculator.dart';
 import 'upload.dart';
 import 'dashboard.dart';
 import 'analysis.dart';
@@ -15,34 +16,24 @@ void main() {
   );
 }
 
-class Abstract extends StatelessWidget {
-  const Abstract({Key? key, required this.child}) : super(key: key);
-  final Image child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      semanticContainer: true,
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      elevation: 15,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      child: Stack(
-        children: [
-          SizedBox(width: 400, height: 280, child: child),
-        ],
-      ),
-    );
-  }
-}
-
 class Filler extends StatelessWidget {
-  const Filler({Key? key, required this.fill, this.styler}) : super(key: key);
-  final Text fill;
-  final TextStyle? styler;
+  const Filler({
+    Key? key,
+    this.fill =
+        "Calculate your cgpa remotely, No stress, No hassle, We will keep your Results safe , we promise to use our target setting feature to estimate how many of those good grades you need to get your desired Cgpa!",
+  }) : super(key: key);
+  final String fill;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(height: 280, width: 400, child: fill);
+    return SizedBox(
+        height: 280,
+        width: 400,
+        child: Text(
+          fill,
+          style: TextStyle(
+              color: Colors.grey[700], fontFamily: 'Pop', fontSize: 23),
+        ));
   }
 }
 
@@ -175,6 +166,34 @@ class _TxtfieldState extends State<Txtfield> {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
               )),
+        ));
+  }
+}
+
+class Abstract extends StatelessWidget {
+  const Abstract({Key? key, required this.pic, this.destination = const Calc()})
+      : super(key: key);
+  final Widget pic;
+  final destination;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => destination));
+        },
+        child: Card(
+          semanticContainer: true,
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          elevation: 15,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+          child: Stack(
+            children: [
+              SizedBox(width: 400, height: 280, child: pic),
+            ],
+          ),
         ));
   }
 }

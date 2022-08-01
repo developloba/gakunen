@@ -7,7 +7,7 @@ import 'main.dart';
 
 import 'package:flutter/material.dart';
 
-String name = '';
+String name = ' Korede';
 List<String> names = [' Dolapo', ' Elile', ' Chidinma', ' Loba', ' segggs'];
 
 class Home extends StatefulWidget {
@@ -163,35 +163,16 @@ class _HomeState extends State<Home> {
                       flex: 1,
                       child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 90.0),
-                          child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const Calc()));
-                              },
-                              child: Abstract(
-                                child: Image.asset(
-                                  'images/card 2.png',
-                                  fit: BoxFit.fill,
-                                  alignment: Alignment.center,
-                                ),
-                              ))),
+                          child: Abstract(
+                              pic: Image.asset(
+                            'images/card 2.png',
+                            fit: BoxFit.fill,
+                          ))),
                     ),
                     const SizedBox(
                       width: 150,
                     ),
-                    SizedBox(
-                      height: 280,
-                      width: 400,
-                      child: Text(
-                        "Calculate your cgpa remotely, No stress, No hassle, We will keep your Results safe , we promise to use our target setting feature to estimate how many of those good grades you need to get your desired Cgpa!",
-                        style: TextStyle(
-                            color: Colors.grey[700],
-                            fontFamily: 'Pop',
-                            fontSize: 23),
-                      ),
-                    )
+                    const Filler()
                   ],
                 ),
                 const SizedBox(
@@ -200,15 +181,7 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Filler(
-                      fill: Text(
-                        'hey love',
-                        style: TextStyle(
-                            color: Colors.grey[700],
-                            fontFamily: 'Pop',
-                            fontSize: 23),
-                      ),
-                    ),
+                    const Filler(),
                     const SizedBox(
                       width: 150,
                     ),
@@ -216,20 +189,13 @@ class _HomeState extends State<Home> {
                       flex: 1,
                       child: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 90.0),
-                          child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const Up()));
-                              },
-                              child: Abstract(
-                                child: Image.asset(
-                                  'images/card 1.jpg',
-                                  fit: BoxFit.fill,
-                                  alignment: Alignment.center,
-                                ),
-                              ))),
+                          child: Abstract(
+                            pic: Image.asset(
+                              'images/card 1.jpg',
+                              fit: BoxFit.fill,
+                            ),
+                            destination: const Up(),
+                          )),
                     ),
                   ],
                 ),
@@ -237,37 +203,21 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Flexible(
-                      flex: 1,
-                      child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 90.0),
-                          child: InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Analysis()));
-                              },
-                              child: Abstract(
-                                child: Image.asset(
-                                  'images/card 3.jpg',
-                                  fit: BoxFit.fill,
-                                  alignment: Alignment.center,
-                                ),
-                              ))),
-                    ),
+                        flex: 1,
+                        child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 90.0),
+                            child: Abstract(
+                              pic: Image.asset(
+                                'images/card 3.jpg',
+                                fit: BoxFit.fill,
+                                alignment: Alignment.center,
+                              ),
+                              destination: const Analysis(),
+                            ))),
                     const SizedBox(
                       width: 150,
                     ),
-                    Filler(
-                      fill: Text(
-                        'hey love',
-                        style: TextStyle(
-                            color: Colors.grey[700],
-                            fontFamily: 'Pop',
-                            fontSize: 23),
-                      ),
-                    )
+                    const Filler()
                   ],
                 ),
               ]),

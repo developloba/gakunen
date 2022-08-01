@@ -37,6 +37,11 @@ android {
         jvmTarget = '1.8'
     }
 
+    plugins {
+    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+}
+
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
